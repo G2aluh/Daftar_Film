@@ -12,12 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Daftar Film',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: 'Roboto'),
       home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

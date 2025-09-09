@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speed_test_01/screens/detail_screen.dart';
 import '../models/daftar_film.dart';
 
 class MovieCard extends StatelessWidget {
@@ -11,11 +12,21 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(10), bottomLeft: Radius.circular(10)),
+        side: const BorderSide(color: Colors.black, width: 1),
+      ),
       elevation: 4,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: onTap,
+         onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(movie: movie),
+            ),
+          );
+        },
         child: Row(
           children: [
             ClipRRect(
@@ -59,10 +70,10 @@ class MovieCard extends StatelessWidget {
             ),
             // Garis biru muda sebagai hiasan di sebelah kanan
             Container(
-              width: 4,
+              width: 5,
               height: 140,
               decoration: BoxDecoration(
-                color: Colors.lightBlue[200],
+                color: Colors.lightBlue[300],
                 borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(12),
                   bottomRight: Radius.circular(12),
